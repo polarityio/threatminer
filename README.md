@@ -10,6 +10,8 @@ To learn more about ThreatMiner, please visit the [official website](https://www
 
 Check out the integration in action:
 
+![image](https://user-images.githubusercontent.com/22529325/124612872-aefcac00-de40-11eb-8f2d-c3537a43bdc3.png)
+
 ## ThreatMiner Integration Options
 
 ### ThreatMiner Api URL
