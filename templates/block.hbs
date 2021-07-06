@@ -1,0 +1,373 @@
+{{#if details.results}}
+    {{#each details.results as | result index| }}
+        {{#if (gt index 0)}}
+            <hr>
+        {{/if}}
+        {{#if (eq block.entity.type "domain")}}
+        {{! Domain output parsing}}
+          <h1 class="p-title">
+              {{fa-icon "question" fixedWidth=true}}  Whois Information
+          </h1>
+          {{#if result.domain}}
+            <div>
+                <span class="p-key">Domain: </span>
+                <a href="https://www.threatminer.org/domain.php?q={{result.domain}}">{{result.domain}} {{fa-icon "external-link-square" class="external-link-icon"}}</a><br>
+            </div>
+          {{/if}}
+          {{#if result.whois.whois_server}}
+            <div>
+                <span class="p-key">Whois Server: </span>
+                <span class="p-value">{{result.whois.whois_server}}</span>
+            </div>
+          {{/if}}
+          {{#if result.whois.registrar}}
+            <div>
+                <span class="p-key">Registrar: </span>
+                <span class="p-value">{{result.whois.registrar}}</span>
+            </div>
+          {{/if}}
+          {{#if result.whois.creation_date}}
+            <div>
+                <span class="p-key">Creation Date: </span>
+                <span class="p-value">{{result.whois.creation_date}}</span>
+            </div>
+          {{/if}}
+          {{#if result.whois.updated_date}}
+            <div>
+                <span class="p-key">Updated Date: </span>
+                <span class="p-value">{{result.whois.updated_date}}</span>
+            </div>
+          {{/if}}
+          {{#if result.whois.expiration_date}}
+            <div>
+                <span class="p-key">Expiration Date: </span>
+                <span class="p-value">{{result.whois.expiration_date}}</span>
+            </div>
+          {{/if}}
+          {{#if result.whois.billing_info}}
+              <h1 class="p-title">
+                  {{fa-icon "dollar-sign" fixedWidth=true}} Billing Info
+              </h1>
+              {{#if result.whois.billing_info.Organization}}
+                <div>
+                    <span class="p-key">Organization: </span>
+                    <span class="p-value">{{result.whois.billing_info.Organization}}</span>
+                </div>
+              {{/if}}
+              {{#if result.whois.billing_info.City}}
+                <div>
+                    <span class="p-key">City: </span>
+                    <span class="p-value">{{result.whois.billing_info.City}}</span>
+                </div>
+              {{/if}}
+              {{#if result.whois.billing_info.State}}
+                <div>
+                    <span class="p-key">State: </span>
+                    <span class="p-value">{{result.whois.billing_info.State}}</span>
+                </div>
+              {{/if}}
+              {{#if result.whois.billing_info.Country}}
+                <div>
+                    <span class="p-key">Country: </span>
+                    <span class="p-value">{{result.whois.billing_info.Country}}</span>
+                </div>
+              {{/if}}
+              {{#if result.whois.billing_info.Postal_Code}}
+                <div>
+                    <span class="p-key">Postal Code: </span>
+                    <span class="p-value">{{result.whois.billing_info.Postal_Code}}</span>
+                </div>
+              {{/if}}
+          {{/if}}
+          {{#if result.whois.registrant_info}}
+              <h1 class="p-title">
+                  {{fa-icon "registered" fixedWidth=true}} Registrant Info
+              </h1>
+              {{#if result.whois.registrant_info.Organization}}
+                <div>
+                    <span class="p-key">Organization: </span>
+                    <span class="p-value">{{result.whois.registrant_info.Organization}}</span>
+                </div>
+              {{/if}}
+              {{#if result.whois.registrant_info.City}}
+                <div>
+                    <span class="p-key">City: </span>
+                    <span class="p-value">{{result.whois.registrant_info.City}}</span>
+                </div>
+              {{/if}}
+              {{#if result.whois.registrant_info.State}}
+                <div>
+                    <span class="p-key">State: </span>
+                    <span class="p-value">{{result.whois.registrant_info.State}}</span>
+                </div>
+              {{/if}}
+              {{#if result.whois.registrant_info.Street}}
+                <div>
+                    <span class="p-key">Street: </span>
+                    <span class="p-value">{{result.whois.registrant_info.Street}}</span>
+                </div>
+              {{/if}}
+              {{#if result.whois.registrant_info.Country}}
+                <div>
+                    <span class="p-key">Country: </span>
+                    <span class="p-value">{{result.whois.registrant_info.Country}}</span>
+                </div>
+              {{/if}}
+              {{#if result.whois.registrant_info.Postal_Code}}
+                <div>
+                    <span class="p-key">Postal Code: </span>
+                    <span class="p-value">{{result.whois.registrant_info.Postal_Code}}</span>
+                </div>
+              {{/if}}
+          {{/if}}
+          {{#if result.whois.emails}}
+              <h1 class="p-title">
+                  {{fa-icon "envelope" fixedWidth=true}} Emails
+              </h1>
+              {{#if result.whois.emails.admin}}
+                <div>
+                    <span class="p-key">Admin: </span>
+                    <a href="https://www.threatminer.org/email.php?q={{result.whois.email_hashes.admin}}">{{result.whois.emails.admin}} {{fa-icon "external-link-square" class="external-link-icon"}}</a><br>
+                </div>
+              {{/if}}
+              {{#if result.whois.emails.tech}}
+                <div>
+                    <span class="p-key">Tech: </span>
+                    <a href="https://www.threatminer.org/email.php?q={{result.whois.email_hashes.tech}}">{{result.whois.emails.tech}} {{fa-icon "external-link-square" class="external-link-icon"}}</a><br>
+                </div>
+              {{/if}}
+              {{#if result.whois.emails.registrant}}
+                <div>
+                    <span class="p-key">Registrant: </span>
+                    <a href="https://www.threatminer.org/email.php?q={{result.whois.email_hashes.registrant}}">{{result.whois.emails.registrant}} {{fa-icon "external-link-square" class="external-link-icon"}}</a><br>
+                </div>
+              {{/if}}
+              {{#if result.whois.emails.billing}}
+                <div>
+                    <span class="p-key">Billing: </span>
+                    <a href="https://www.threatminer.org/email.php?q={{result.whois.email_hashes.billing}}">{{result.whois.emails.billing}} {{fa-icon "external-link-square" class="external-link-icon"}}</a><br>
+                </div>
+              {{/if}}
+          {{/if}}
+          {{#if result.whois.tech_info}}
+              <h1 class="p-title">
+                  {{fa-icon "desktop" fixedWidth=true}} Tech Info
+              </h1>
+              {{#if result.whois.tech_info.Organization}}
+                <div>
+                    <span class="p-key">Organization: </span>
+                    <span class="p-value">{{result.whois.tech_info.Organization}}</span>
+                </div>
+              {{/if}}
+              {{#if result.whois.tech_info.City}}
+                <div>
+                    <span class="p-key">City: </span>
+                    <span class="p-value">{{result.whois.tech_info.City}}</span>
+                </div>
+              {{/if}}
+              {{#if result.whois.tech_info.State}}
+                <div>
+                    <span class="p-key">State: </span>
+                    <span class="p-value">{{result.whois.tech_info.State}}</span>
+                </div>
+              {{/if}}
+              {{#if result.whois.tech_info.Country}}
+                <div>
+                    <span class="p-key">Country: </span>
+                    <span class="p-value">{{result.whois.tech_info.Country}}</span>
+                </div>
+              {{/if}}
+              {{#if result.whois.tech_info.Postal_Code}}
+                <div>
+                    <span class="p-key">Postal Code: </span>
+                    <span class="p-value">{{result.whois.tech_info.Postal_Code}}</span>
+                </div>
+              {{/if}}
+          {{/if}}
+          {{#if result.whois.admin_info}}
+              <h1 class="p-title">
+                  {{fa-icon "crown" fixedWidth=true}} Admin Info
+              </h1>
+              {{#if result.whois.admin_info.Organization}}
+                <div>
+                    <span class="p-key">Organization: </span>
+                    <span class="p-value">{{result.whois.admin_info.Organization}}</span>
+                </div>
+              {{/if}}
+              {{#if result.whois.admin_info.City}}
+                <div>
+                    <span class="p-key">City: </span>
+                    <span class="p-value">{{result.whois.admin_info.City}}</span>
+                </div>
+              {{/if}}
+              {{#if result.whois.admin_info.State}}
+                <div>
+                    <span class="p-key">State: </span>
+                    <span class="p-value">{{result.whois.admin_info.State}}</span>
+                </div>
+              {{/if}}
+              {{#if result.whois.admin_info.Country}}
+                <div>
+                    <span class="p-key">Country: </span>
+                    <span class="p-value">{{result.whois.admin_info.Country}}</span>
+                </div>
+              {{/if}}
+              {{#if result.whois.admin_info.Postal_Code}}
+                <div>
+                    <span class="p-key">Postal Code: </span>
+                    <span class="p-value">{{result.whois.admin_info.Postal_Code}}</span>
+                </div>
+              {{/if}}
+          {{/if}}
+          {{#if result.whois.nameservers}}
+            <h1 class="p-title">
+                {{fa-icon "server" fixedWidth=true}} Name Server(s)
+            </h1>
+            <div>
+                {{#each result.whois.nameservers as |ns|}}
+                    <a href="https://www.threatminer.org/ns.php?q={{ns}}">{{ns}} {{fa-icon "external-link-square" class="external-link-icon"}}</a><br>
+                {{/each}}
+            </div>
+          {{/if}}
+        {{/if}}
+        {{#if (eq block.entity.type "hash")}}
+        {{! Hash output parsing}}
+          <h1 class="p-title">
+              {{fa-icon "file" fixedWidth=true}} Sample Metadata
+          </h1>
+          {{#if result.md5}}
+            <div>
+                <span class="p-key">MD5: </span>
+                <a href="https://www.threatminer.org/sample.php?q={{result.md5}}">{{result.md5}} {{fa-icon "external-link-square" class="external-link-icon"}}</a><br>
+            </div>
+          {{/if}}
+          {{#if result.sha1}}
+            <div>
+                <span class="p-key">SHA-1: </span>
+                <span class="p-value">{{result.sha1}}</span>
+            </div>
+          {{/if}}
+          {{#if result.sha256}}
+            <div>
+                <span class="p-key">SHA-256: </span>
+                <span class="p-value">{{result.sha256}}</span>
+            </div>
+          {{/if}}
+          {{#if result.sha512}}
+            <div>
+                <span class="p-key">SHA-512: </span>
+                <span class="p-value">{{result.sha512}}</span>
+            </div>
+          {{/if}}
+          {{#if result.ssdeep}}
+            <div>
+                <span class="p-key">SSDEEP: </span>
+                <span class="p-value">{{result.ssdeep}}</span>
+            </div>
+          {{/if}}
+          {{#if result.imphash}}
+            <div>
+                <span class="p-key">IMHASH: </span>
+                <span class="p-value">{{result.ssdeep}}</span>
+            </div>
+          {{/if}}
+          {{#if result.file_type}}
+            <div>
+                <span class="p-key">File Type: </span>
+                <span class="p-value">{{result.file_type}}</span>
+            </div>
+          {{/if}}
+          {{#if result.architecture}}
+            <div>
+                <span class="p-key">Architecture: </span>
+                <span class="p-value">{{result.architecture}}</span>
+            </div>
+          {{/if}}
+          {{#if result.authentihash}}
+            <div>
+                <span class="p-key">Authentihash: </span>
+                <span class="p-value">{{result.authentihash}}</span>
+            </div>
+          {{/if}}
+          {{#if result.file_name}}
+            <div>
+                <span class="p-key">File Name: </span>
+                <span class="p-value">{{result.file_name}}</span>
+            </div>
+          {{/if}}
+          {{#if result.file_size}}
+            <div>
+                <span class="p-key">File Size: </span>
+                <span class="p-value">{{result.file_size}}</span>
+            </div>
+          {{/if}}
+          {{#if result.date_analysed}}
+            {{#if result.date_analysed.sec}}
+              <div>
+                  <span class="p-key">Analysis Date: </span>
+                  <span class="p-value">{{moment-format (unix result.date_analysed.sec) "YYYY-MM-DD HH:mm:ss z" timeZone=timezone}}</span>
+              </div>
+            {{else}}
+              <div>
+                  <span class="p-key">Analysis Date: </span>
+                  <span class="p-value">{{result.date_analysed}}</span>
+              </div>
+            {{/if}}
+          {{/if}}
+        {{/if}}
+        {{#if (eq block.entity.type "IPv4")}}
+        {{! IPv4 output parsing}}
+          <h1 class="p-title">
+              {{fa-icon "question" fixedWidth=true}} IP Whois Information
+          </h1>
+          {{#if result}}
+            <div>
+                <span class="p-key">Host: </span>
+                <a href="https://www.threatminer.org/host.php?q={{block.entity.value}}">{{block.entity.value}} {{fa-icon "external-link-square" class="external-link-icon"}}</a><br>
+            </div>
+          {{/if}}
+          {{#if result.reverse_name}}
+            <div>
+                <span class="p-key">rDNS: </span>
+                <span class="p-value">{{result.reverse_name}}</span>
+            </div>
+          {{/if}}
+          {{#if result.bgp_prefix}}
+            <div>
+                <span class="p-key">BGP Prefix: </span>
+                <span class="p-value">{{result.bgp_prefix}}</span>
+            </div>
+          {{/if}}
+          {{#if result.cc}}
+            <div>
+                <span class="p-key">Country Code: </span>
+                <span class="p-value">{{result.cc}}</span>
+            </div>
+          {{/if}}
+          {{#if result.asn}}
+            <div>
+                <span class="p-key">ASN: </span>
+                <span class="p-value">{{result.asn}}</span>
+            </div>
+          {{/if}}
+          {{#if result.asn_name}}
+            <div>
+                <span class="p-key">ASN Name: </span>
+                <span class="p-value">{{result.asn_name}}</span>
+            </div>
+          {{/if}}
+          {{#if result.org_name}}
+            <div>
+                <span class="p-key">Org Name: </span>
+                <span class="p-value">{{result.org_name}}</span>
+            </div>
+          {{/if}}
+          {{#if result.register}}
+            <div>
+                <span class="p-key">Register: </span>
+                <span class="p-value">{{result.register}}</span>
+            </div>
+          {{/if}}
+        {{/if}}
+    {{/each}}
+{{/if}}
