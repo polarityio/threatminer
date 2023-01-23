@@ -1,0 +1,79 @@
+{
+  "name": "ThreatMiner",
+  "acronym": "TM",
+  "description": "Displays enrichment data related to various indicator types from the ThreatMiner API.",
+  "entityTypes": [
+    "IPv4",
+    "hash",
+    "domain"
+  ],
+  "styles": [
+    "./styles/style.less"
+  ],
+  "defaultColor": "light-pink",
+  "block": {
+    "component": {
+      "file": "./component/block.js"
+    },
+    "template": {
+      "file": "./templates/block.hbs"
+    }
+  },
+  "summary": {
+    "component": {
+      "file": "./component/summary.js"
+    },
+    "template": {
+      "file": "./templates/summary.hbs"
+    }
+  },
+  "request": {
+    "cert": "",
+    "key": "",
+    "passphrase": "",
+    "ca": "",
+    "proxy": "",
+    "rejectUnauthorized": true
+  },
+  "logging": {
+    "level": "trace"
+  },
+  "options": [
+    {
+      "key": "host",
+      "name": "ThreatMiner API URL",
+      "description": "The base URL of the ThreatMiner API including the schema (i.e., https://)",
+      "default": "https://api.threatminer.org",
+      "type": "text",
+      "userCanEdit": false,
+      "adminOnly": true
+    },
+    {
+      "key": "blocklist",
+      "name": "Ignore List",
+      "description": "List of domains and IPs that you never want to send to ThreatMiner",
+      "default": "",
+      "type": "text",
+      "userCanEdit": false,
+      "adminOnly": false
+    },
+    {
+      "key": "domainBlocklistRegex",
+      "name": "Ignore Domain Regex",
+      "description": "Domains that match the given regex will not be looked up.",
+      "default": "",
+      "type": "text",
+      "userCanEdit": false,
+      "adminOnly": false
+    },
+    {
+      "key": "ipBlocklistRegex",
+      "name": "Ignore IP Regex",
+      "description": "IPs that match the given regex will not be looked up.",
+      "default": "",
+      "type": "text",
+      "userCanEdit": false,
+      "adminOnly": false
+    }
+  ]
+}
