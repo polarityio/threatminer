@@ -1,4 +1,5 @@
 {
+  "polarityIntegrationUuid": "f7538ff0-cce1-11ed-aeee-075d3490155d",
   "name": "ThreatMiner",
   "acronym": "TM",
   "description": "Displays enrichment data related to various indicator types from the ThreatMiner API.",
