@@ -1,6 +1,6 @@
 {
   "name": "ThreatMiner",
-  "version": "3.0.1-beta",
+  "version": "3.0.1",
   "main": "./integration.js",
   "private": true,
   "dependencies": {
