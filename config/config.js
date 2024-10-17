@@ -22,8 +22,9 @@ module.exports = {
    * @type String
    * @optional
    */
-  description: 'Displays enrichment data related to various indicator types from the ThreatMiner API.',
-  entityTypes: ['IPv4', 'hash', 'domain'],
+  description:
+    'Displays enrichment data related to various indicator types from the ThreatMiner API.',
+  entityTypes: ['IPv4', 'MD5', 'SHA1', 'SHA256', 'domain'],
   /**
    * An array of style files (css or less) that will be included for your integration. Any styles specified in
    * the below files can be used in your custom template.
@@ -72,7 +73,7 @@ module.exports = {
     ca: '',
     // An HTTP proxy to be used. Supports proxy Auth with Basic Auth, identical to support for
     // the url parameter (by embedding the auth info in the uri)
-    proxy: ""
+    proxy: ''
   },
   logging: {
     level: 'info' //trace, debug, info, warn, error, fatal
@@ -89,7 +90,8 @@ module.exports = {
     {
       key: 'host',
       name: 'ThreatMiner API URL',
-      description: 'The base URL of the ThreatMiner API including the schema (i.e., https://)',
+      description:
+        'The base URL of the ThreatMiner API including the schema (i.e., https://)',
       default: 'https://api.threatminer.org',
       type: 'text',
       userCanEdit: false,
@@ -107,8 +109,7 @@ module.exports = {
     {
       key: 'domainBlocklistRegex',
       name: 'Ignore Domain Regex',
-      description:
-        'Domains that match the given regex will not be looked up.',
+      description: 'Domains that match the given regex will not be looked up.',
       default: '',
       type: 'text',
       userCanEdit: false,
