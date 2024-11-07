@@ -3,14 +3,8 @@
   "name": "ThreatMiner",
   "acronym": "TM",
   "description": "Displays enrichment data related to various indicator types from the ThreatMiner API.",
-  "entityTypes": [
-    "IPv4",
-    "hash",
-    "domain"
-  ],
-  "styles": [
-    "./styles/style.less"
-  ],
+  "entityTypes": ["IPv4", "MD5", "SHA1", "SHA256", "domain"],
+  "styles": ["./styles/style.less"],
   "defaultColor": "light-pink",
   "block": {
     "component": {
@@ -28,15 +22,8 @@
       "file": "./templates/summary.hbs"
     }
   },
-  "request": {
-    "cert": "",
-    "key": "",
-    "passphrase": "",
-    "ca": "",
-    "proxy": ""
-  },
   "logging": {
-    "level": "trace"
+    "level": "info"
   },
   "options": [
     {
