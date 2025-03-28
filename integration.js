@@ -201,8 +201,6 @@ function doLookup(entities, options, cb) {
 function handleRestError(error, entity, res, body) {
   let result;
 
-  Logger.info({ res, body }, 'Response');
-
   if (error) {
     return {
       error: error,
