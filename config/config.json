@@ -14,14 +14,6 @@
       "file": "./templates/block.hbs"
     }
   },
-  "summary": {
-    "component": {
-      "file": "./component/summary.js"
-    },
-    "template": {
-      "file": "./templates/summary.hbs"
-    }
-  },
   "logging": {
     "level": "info"
   },
