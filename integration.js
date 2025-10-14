@@ -233,7 +233,7 @@ function handleRestError(error, entity, res, body) {
     result = {
       error: body ? body : 'Unknown Error',
       detail:
-        body && body.error && body.message
+        body && typeof body === 'object' && body.error && body.message
           ? `${body.error}: ${body.message}`
           : `Unexpected HTTP Status Code ${res.statusCode} received.`
     };
