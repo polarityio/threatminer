@@ -1,0 +1,106 @@
+{
+  "results": [
+    {
+      "domain": "malicious-example.com",
+      "whois": {
+        "registrar": "NameCheap Inc.",
+        "whois_server": "whois.namecheap.com",
+        "creation_date": "2023-01-15",
+        "updated_date": "2024-01-10",
+        "expiration_date": "2025-01-15",
+        "nameservers": [
+          "ns1.suspiciousns.com",
+          "ns2.suspiciousns.com"
+        ],
+        "emails": {
+          "admin": "admin@privacy-protected.com",
+          "tech": "tech@privacy-protected.com",
+          "registrant": "registrant@privacy-protected.com"
+        },
+        "email_hashes": {
+          "admin": "abc123def456",
+          "tech": "def789ghi012",
+          "registrant": "ghi345jkl678"
+        },
+        "registrant_info": {
+          "Organization": "Privacy Protection Service",
+          "City": "Panama City",
+          "State": "Panama",
+          "Country": "PA",
+          "Postal_Code": "00000"
+        },
+        "admin_info": {
+          "Organization": "Domain Admin Services",
+          "City": "Panama City",
+          "State": "Panama",
+          "Country": "PA"
+        },
+        "tech_info": {
+          "Organization": "Tech Support LLC",
+          "City": "Panama City",
+          "Country": "PA"
+        }
+      },
+      "last_updated": "2024-01-16T12:00:00Z",
+      "internal_id": "dom_98765",
+      "debug_metadata": {
+        "query_time_ms": 245,
+        "api_version": "v2"
+      }
+    },
+    {
+      "md5": "44d88612fea8a8f36de82e1278abb02f",
+      "sha1": "3395856ce81f2b7382dee72602f798b642f14140",
+      "sha256": "275a021bbfb6489e54d471899f7db9d1663fc695ec2fe2a2c4538aabf651fd0f",
+      "sha512": "5b07e93b7d6f2e4f09f1c96f5a3e4c2d8b6f7a9c1e3f5d7b9a1c3e5f7d9b1a3c5e7f9d1a3c5e7f9d1a3c5e7f9d1a3c5e7f9d1a3c5e7f9d1a3c5e7f9",
+      "ssdeep": "768:gQd7q9qX5qF9Q5q9qX5qF9Q5q9qX5qF9:g7X5F9q9X5F9q9X5F9",
+      "imphash": "f34d5f2d4577ed6d9ceec516c1f5a744",
+      "file_name": "suspicious_malware.exe",
+      "file_type": "PE32 executable",
+      "file_size": "524288",
+      "architecture": "x86",
+      "authentihash": "8f3b5d6e9c2a4f7d1e8b3c5a7d9f2e4b6c8a1d3f5e7b9c2d4f6a8e1c3b5d7f9e",
+      "date_analysed": {
+        "sec": 1705392000
+      },
+      "av_detections": [
+        {
+          "vendor": "Kaspersky",
+          "detection": "Trojan.Win32.Generic"
+        },
+        {
+          "vendor": "Symantec",
+          "detection": "Trojan.Gen.2"
+        }
+      ],
+      "internal_sample_id": "hash_54321",
+      "submission_source": "automated_feed",
+      "analysis_metadata": {
+        "sandbox_time_seconds": 180,
+        "analysis_engine": "cuckoo_v2.0"
+      }
+    },
+    {
+      "reverse_name": "malicious-host.example.org",
+      "bgp_prefix": "192.0.2.0/24",
+      "cc": "US",
+      "asn": "AS64496",
+      "asn_name": "Example Hosting Provider",
+      "org_name": "Suspicious Hosting LLC",
+      "register": "ARIN",
+      "last_seen": "2024-01-15T18:30:00Z",
+      "reputation_score": -85,
+      "threat_tags": [
+        "malware-distribution",
+        "c2-server"
+      ]
+    }
+  ],
+  "status_code": "200",
+  "status_message": "Results found",
+  "query_metadata": {
+    "query_type": "mixed",
+    "timestamp": "2024-01-16T12:00:00Z",
+    "rate_limit_remaining": 8
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "root": {
+    "path": "",
+    "on_null": "return_empty"
+  },
+  "pipeline": [
+    {
+      "op": "copy",
+      "from": "results[].domain",
+      "to": "reduced_results.domain"
+    },
+    {
+      "op": "copy",
+      "from": "results[].whois.registrar",
+      "to": "reduced_results.whois_registrar"
+    },
+    {
+      "op": "copy",
+      "from": "results[].md5",
+      "to": "reduced_results.md5_hash"
+    },
+    {
+      "op": "copy",
+      "from": "results[].file_name",
+      "to": "reduced_results.file_name"
+    },
+    {
+      "op": "prune",
+      "strategy": "empty_values",
+      "target": "reduced_results"
+    }
+  ],
+  "output": {
+    "result": "$working.reduced_results"
+  }
+}
